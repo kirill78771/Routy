@@ -10,10 +10,10 @@ public protocol NavigationElementProtocol {
  Basic implementation for iOS / MacOS
  */
 
-private var associatedContextHolder = 0
+private nonisolated(unsafe) var associatedContextHolder = 0
 
 extension NavigationElementProtocol where Self: NSObject {
-
+    
     public var hasContext: Bool {
         untypedContext != nil
     }
